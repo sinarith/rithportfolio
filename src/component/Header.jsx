@@ -8,7 +8,7 @@ const Header = () => {
 
   return (
     <header className="header">
-      <div className="logo"><Link to="/">MyPortfolio</Link></div>
+      <div className="logo"><Link to="/">My Portfolio</Link></div>
 
       <button className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>
         ☰
