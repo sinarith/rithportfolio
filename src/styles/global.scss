@@ -17,3 +17,6 @@ body {
   background-color: $dark-bg;
   color: $text-dark;
 }
+html {
+  scroll-behavior: smooth;
+}
