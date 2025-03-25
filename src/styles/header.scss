@@ -1,0 +1,75 @@
+@import "darkmode";
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background 0.3s ease-in-out;
+
+  .logo a {
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--text-color);
+  }
+
+  .menu-toggle {
+    display: none;
+    font-size: 1.8rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--text-color);
+  }
+
+  .nav {
+    ul {
+      display: flex;
+      list-style: none;
+      gap: 20px;
+
+      li a {
+        text-decoration: none;
+        color: var(--text-color);
+        font-size: 1rem;
+        transition: color 0.3s;
+
+        &:hover {
+          color: var(--primary-color);
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    background-color: var(--bg-color);
+    display: none;
+    text-align: center;
+
+    ul {
+      flex-direction: column;
+      padding: 10px 0;
+
+      li {
+        padding: 10px 0;
+      }
+    }
+  }
+
+  .nav.open {
+    display: block;
+  }
+}
