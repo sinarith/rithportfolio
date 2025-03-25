@@ -1,30 +1,42 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import DarkModeToggle from "./DarkModeToggle";
-import "../styles/header.scss";
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="header">
-      <div className="logo"><Link to="/">My Portfolio</Link></div>
+    <nav className="navbar navbar-expand-lg bg-dark navbar-dark">
+      <div className="container">
+        <a className="navbar-brand" href="#">My Portfolio</a>
 
-      <button className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>
-        ☰
-      </button>
+        <button
+          className="navbar-toggler"
+          type="button"
+          onClick={() => setMenuOpen(!menuOpen)}
+        >
+          <span className="navbar-toggler-icon"></span>
+        </button>
 
-      <nav className={menuOpen ? "nav open" : "nav"}>
-        <ul>
-          <li><Link to="/" onClick={() => setMenuOpen(false)}>Home</Link></li>
-          <li><Link to="/about" onClick={() => setMenuOpen(false)}>About</Link></li>
-          <li><Link to="/projects" onClick={() => setMenuOpen(false)}>Projects</Link></li>
-          <li><Link to="/contact" onClick={() => setMenuOpen(false)}>Contact</Link></li>
-        </ul>
-      </nav>
+        <div className={`collapse navbar-collapse ${menuOpen ? "show" : ""}`}>
+          <ul className="navbar-nav ms-auto">
+            <li className="nav-item">
+              <a className="nav-link" href="#">Home</a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" href="#">About</a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" href="#">Projects</a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" href="#">Contact</a>
+            </li>
+          </ul>
 
-      <DarkModeToggle />
-    </header>
+          <DarkModeToggle />
+        </div>
+      </div>
+    </nav>
   );
 };
 
